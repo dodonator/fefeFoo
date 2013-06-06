@@ -7,12 +7,13 @@ class fefe(object):
 		self.webSeite = urllib.urlopen('http://blog.fefe.de')
 		self.webSeitenInhalt = self.webSeite.read()
 		self.webSeitenInhalt = self.webSeitenInhalt.replace("""<h2><a href="/" style="text-decoration:none;color:black">Fefes Blog</a></h2>
-
 <b>Wer schöne Verschwörungslinks für mich hat: ab an felix-bloginput (at) fefe.de!</b>
 
 <p align=right>Fragen?  <a href="/faq.html">Antworten!</a>  Siehe auch: <a href="http://alternativlos.org/">Alternativlos</a><p>""",'')
+		self.webSeitenInhalt = webSeitenInhalt.split('/<ul>')
 	def markiere(self,toMark):
-		self.webSeitenInhalt = self.webSeitenInhalt.replace(toMark,'<b>' + toMark + '</b>')
+		for inhalt in webSeitenInhalt:
+			inhalt = inhalt.replace(toMark,'<b>' + toMark + '</b>')
 	def archivPutzen(self):
 		self.archiv = open('archiv.html','w')
 		self.archiv.write('\n')
