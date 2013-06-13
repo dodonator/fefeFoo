@@ -1,5 +1,7 @@
 #!/usr/bin/python
 # coding: utf-8
+# License: GPLv3
+# Developer/Owner: Dodo (dodo@chaosdorf.de)
 import urllib
 import time
 class fefe(object):
