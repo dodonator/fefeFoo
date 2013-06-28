@@ -38,7 +38,7 @@ for monat in resultMonate:
 	files.append(tmpFilename)
 	tmpCommand = 'touch ' + tmpFilename
 	tmpPath = 'file:///home/dodo/git/fefeFoo/' + tmpFilename
-	tmpHyperlink = '<a href=' + tmpFilename + '>' + monat + '</a><br>' + '\n'
+	tmpHyperlink = '<a href=' + tmpFilename + '>' + monat + '</a>'
 	# print tmpFilename
 	# print tmpCommand
 	# print tmpPath
@@ -52,9 +52,17 @@ for monat in resultMonate:
 	f1 = file1.write(result)
 	file1.close()
 	inhaltsverzeichnis.append(tmpHyperlink)
-dateiInhalt = ''	
+dateiInhalt = ''
+dateCounter = 0
+yearCounter = 0
 for link in inhaltsverzeichnis:
-	dateiInhalt += link + '<br>'
+	dateCounter += 1
+	if dateCounter == 12:
+		dateiInhalt += ' ' + str(int(startJ)+yearCounter) + '<br>'
+		dateCounter = 0
+		yearCounter += 1
+	else:
+		dateiInhalt += link + ' '
 
 file2 = open('start.html','w')
 f2 = file2.write(dateiInhalt)
