@@ -10,7 +10,6 @@ jahre = []
 startJ = '2006'
 for i in range(int(startJ),time.localtime()[0]):
 	jahre.append(str(i))
-# print jahre
 
 resultMonate = []
 
@@ -23,10 +22,6 @@ for mon in range(1,time.localtime()[1]):
 		mon = str(0) + str(mon)
 
 	resultMonate.append(str(str(time.localtime()[0]) + str(mon)))
-
-
-print resultMonate
-
 jahr = ''
 monat = ''
 inhaltsverzeichnis = []
@@ -38,13 +33,7 @@ for monat in resultMonate:
 	files.append(tmpFilename)
 	tmpCommand = 'touch ' + tmpFilename
 	tmpPath = 'file:///home/dodo/git/fefeFoo/' + tmpFilename
-	tmpHyperlink = '<a href=' + tmpFilename + '>' + monat + '</a>'
-	# print tmpFilename
-	# print tmpCommand
-	# print tmpPath
-	# print tmpHyperlink
-	# time.sleep(2)
-	# os.system('clear')
+	tmpHyperlink = '<a href=' + tmpFilename + '>' + monat + '</a>' + '\n'
 	os.system(tmpCommand)
 	site = urllib.urlopen('http://blog.fefe.de/?mon=' + monat)
 	result = site.read()
