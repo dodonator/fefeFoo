@@ -19,4 +19,5 @@ tmpHyperlink = '<a href=' + tmpFilename + '>' + monat + '</a><br>' + '\n'
 file2 = open('start.html','a')
 f2 = file2.write(tmpHyperlink)
 file2.close()
-os.system('firefox file:///home/dodo/git/fefeFoo &')
+# os.system('firefox file:///home/dodo/git/fefeFoo &')
+os.system('firefox file:///home/dodo/git/fefeFoo/start.html &')
