@@ -15,4 +15,8 @@ os.system('touch ' + tmpFilename)
 file1 = open(tmpFilename,'w')
 f1 = file1.write(tmpInhalt)
 file1.close()
+tmpHyperlink = '<a href=' + tmpFilename + '>' + monat + '</a><br>' + '\n'
+file2 = open('start.html','a')
+f2 = file2.write(tmpHyperlink)
+file2.close()
 os.system('firefox file:///home/dodo/git/fefeFoo &')

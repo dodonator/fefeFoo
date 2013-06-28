@@ -52,12 +52,13 @@ for monat in resultMonate:
 	f1 = file1.write(result)
 	file1.close()
 	inhaltsverzeichnis.append(tmpHyperlink)
-	
+dateiInhalt = ''	
 for link in inhaltsverzeichnis:
-	file2 = open('start.html','a')
-	f2 = file2.write(link)
-	file2.close()
+	dateiInhalt += link + '<br>'
 
+file2 = open('start.html','w')
+f2 = file2.write(dateiInhalt)
+file2.close()
 def removeMonthFiles(files):
 	for datei in files:
 		os.system('sudo rm ' + datei)
