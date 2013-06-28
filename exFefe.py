@@ -1,4 +1,5 @@
 # coding: utf-8
+
 import urllib
 import time
 import datetime
@@ -17,8 +18,14 @@ for jahr in jahre:
 	for monat in monate:
 		resultMonat = jahr + monat
 		resultMonate.append(resultMonat)
+for mon in range(1,time.localtime()[1]):
+	if mon <= 9:
+		mon = str(0) + str(mon)
 
-# print resultMonate
+	resultMonate.append(str(str(time.localtime()[0]) + str(mon)))
+
+
+print resultMonate
 
 jahr = ''
 monat = ''
@@ -55,6 +62,3 @@ def removeMonthFiles(files):
 	for datei in files:
 		os.system('sudo rm ' + datei)
 #removeMonthFiles(files)
-
-
-
