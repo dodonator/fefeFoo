@@ -53,12 +53,13 @@ for monat in resultMonate:
 	file1.close()
 	inhaltsverzeichnis.append(tmpHyperlink)
 dateiInhalt = ''
+dateiInhalt += "<h3> Inhaltsverzeichnis von Fefe's Blog! </h3><br> "
 dateCounter = 0
 yearCounter = 0
 for link in inhaltsverzeichnis:
 	dateCounter += 1
 	if dateCounter == 12:
-		dateiInhalt += ' ' + str(int(startJ)+yearCounter) + '<br>'
+		dateiInhalt += link + ' ' + str(int(startJ)+yearCounter) + '<br>'
 		dateCounter = 0
 		yearCounter += 1
 	else:
