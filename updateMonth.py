@@ -10,10 +10,13 @@ else:
 	monat =  str(time.localtime()[0]) + str(time.localtime()[1])
 tmpWebseite = urllib.urlopen('http://blog.fefe.de/?mon=' + monat)
 tmpInhalt = tmpWebseite.read()
-tmpFilename = 'fefe' + monat + '.html' 
+tmpFilename = './Sites/fefe' + monat + '.html' 
+tmpPDF = './Sites/fefe' + monat + '.pdf'
 os.system('touch ' + tmpFilename)
 file1 = open(tmpFilename,'w')
 f1 = file1.write(tmpInhalt)
 file1.close()
+os.system('sudo rm ' + tmpPDF)
+os.system('wkhtmltopdf ' + tmpFilename + ' ' + tmpPDF)
 # os.system('firefox file:///home/dodo/git/fefeFoo &')
-os.system('firefox file:///home/dodo/git/fefeFoo/start.html &')
+# os.system('firefox file:///home/dodo/git/fefeFoo/start.html &')
