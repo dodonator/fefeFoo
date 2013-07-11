@@ -5,7 +5,8 @@ import time
 import datetime
 import os
 
-# 200701 Beispiel
+# 200701 Beispiel für monat
+# fefe200701.html Beispiel für tmpFilename
 
 monate = ['01','02','03','04','05','06','07','08','09','10','11','12']
 jahre = []
@@ -19,11 +20,12 @@ for jahr in jahre:
 	for monat in monate:
 		resultMonat = jahr + monat
 		resultMonate.append(resultMonat)
-for mon in range(1,time.localtime()[1]):
+for mon in range(1,time.localtime()[1]+1):
 	if mon <= 9:
 		mon = str(0) + str(mon)
 
 	resultMonate.append(str(str(time.localtime()[0]) + str(mon)))
+
 jahr = ''
 monat = ''
 inhaltsverzeichnis = []
@@ -48,6 +50,11 @@ for monat in resultMonate:
 	tmpPath = 'file://' + currentDir + '/Sites/' + tmpFilename
 	tmpHyperlink = '<a href=' + tmpPath + '>' + monat + '</a>' + '\n'
 	inhaltsverzeichnis.append(tmpHyperlink)
+sitesInhalt = os.listdir('./Sites')
+lastMonth = resultMonate[len(resultMonate)-1]
+lastMonthPDF = 'fefe' + lastMonth + '.pdf'
+if lastMonthPDF not in sitesInhalt:
+	os.system('wkhtmltopdf ' + './Sites/fefe' + lastMonth + '.html ' + './Sites/' + lastMonthPDF)
 # print inhaltsverzeichnis
 dateiInhalt = ''
 dateiInhalt += '<html><head><title>Fefe Archiv</title></head><body>'
