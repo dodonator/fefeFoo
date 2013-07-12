@@ -1,0 +1,11 @@
+Teilabschnitte von exFefe.py
+#1# Importierung der nötigen Module
+#2# Erstellung der Monatsstrings mit dem Format YYYYMM
+#3# Initialisierung von wichtigen Variabeln und
+    Herbeiführung der Vorraussetzungen im Dateisystem
+#4# Zusammenbau von inter 
+#5# Herunterladen und Abspeichern der Monatsseiten
+#6# Zusammenstellen des Links für das Inhaltsverzeichniss
+#7# Convertierung der Datei des aktuellen Monats in ein PDF
+#8# Zusammenbau des Inhaltsverzeichnis als HTML
+#9# Schreiben des Inhaltsverzeichniss in die Datei
